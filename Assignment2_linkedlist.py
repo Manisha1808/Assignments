@@ -10,8 +10,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def add_node(self, data):
-        """Add a node at the end of the list"""
+    def add_node(self, data):      
         new_node = Node(data)
         if not self.head:
             self.head = new_node
@@ -23,8 +22,7 @@ class LinkedList:
         current.next = new_node
         print(f"Added node: {data}")
 
-    def print_list(self):
-        """Print the list"""
+    def print_list(self):       
         if not self.head:
             print("List is empty.")
             return
@@ -35,8 +33,7 @@ class LinkedList:
             current = current.next
         print("None")
 
-    def delete_nth_node(self, n):
-        """Delete the nth node (1-based index)"""
+    def delete_nth_node(self, n):       
         try:
             if not self.head:
                 raise Exception("Cannot delete from an empty list.")
