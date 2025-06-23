@@ -1,0 +1,85 @@
+# House Price Prediction – Regression Modeling and Evaluation
+
+Objective
+The objective of this project is to predict house prices based on various features available in the Ames Housing dataset. The goal is to apply and compare different regression algorithms to determine the most accurate and efficient model for price prediction.
+
+Dataset
+The dataset used is from Kaggle’s "House Prices: Advanced Regression Techniques" competition. It contains 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa.
+
+Workflow Summary
+1. Data Loading
+The training and test datasets were loaded and prepared for analysis.
+
+2. Data Preprocessing
+Missing values in numerical columns were filled using the median.
+
+Missing categorical values were filled with a placeholder value such as “None”.
+
+Categorical variables were encoded using one-hot encoding to convert them into numerical format.
+
+All features were combined into a single consistent format for preprocessing and modeling.
+
+3. Feature Engineering
+The target variable, SalePrice, was log-transformed to reduce skewness and improve model performance.
+
+The dataset was split into training and validation subsets to allow unbiased evaluation of models.
+
+4. Model Evaluation Strategy
+A unified evaluation function was created to:
+
+Train the model on the training set.
+
+Predict on the validation set.
+
+Measure the Root Mean Squared Error (RMSE) and R² score.
+
+Plot actual vs. predicted prices for visual inspection of model performance.
+
+5. Regression Models Applied
+The following models were trained and evaluated:
+
+Linear Models
+Simple Linear Regression (using a single significant feature)
+
+Multiple Linear Regression
+
+Polynomial Regression (degree 2)
+
+Ridge Regression (L2 regularization)
+
+Lasso Regression (L1 regularization)
+
+ElasticNet Regression (combination of L1 and L2)
+
+Other Regressors
+k-Nearest Neighbors Regression
+
+Decision Tree Regression
+
+Random Forest Regression
+
+Support Vector Regression (SVR with RBF kernel)
+
+Each model was compared using the same training and validation split to ensure fairness in evaluation.
+
+6. Visualization
+Scatterplots of actual vs. predicted values were used to visually assess the accuracy and consistency of each model. A reference line representing perfect predictions was plotted to compare how closely the predicted values align with actual prices.
+
+Conclusion
+Regularized linear models such as Ridge and Lasso provided stable results with minimal overfitting.
+
+Random Forest Regression showed strong performance in capturing non-linear relationships and interactions.
+
+Simpler models like Linear Regression performed adequately but were outperformed by ensemble methods.
+
+Models such as Polynomial Regression and SVR require careful tuning to avoid overfitting.
+
+Future Scope
+Apply hyperparameter tuning using grid search or random search.
+
+Use cross-validation for more robust evaluation.
+
+Implement model stacking or blending for better ensemble performance.
+
+Deploy the best-performing model through a web application interface using frameworks like Flask or Streamlit.
+
