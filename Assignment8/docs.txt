@@ -1,0 +1,17 @@
+Retrieval-Augmented Generation (RAG) is a system that combines document retrieval with response generation for question answering tasks. It reduces hallucination in language models by grounding answers in retrieved documents.
+
+RAG uses two main components:
+1. Retriever: Finds relevant document chunks for a user query.
+2. Generator: Uses a language model to generate an answer based on retrieved context.
+
+This method helps create chatbots and QA systems that can give answers based on your own notes or documents, making them more reliable.
+
+LangChain is a framework that helps you build applications powered by language models. It supports working with retrieval, chains, and integrations with vector stores like FAISS.
+
+FAISS is a library for efficient similarity search and clustering of dense vectors. It is used to store and search embeddings created from document chunks.
+
+Sentence-transformers like 'all-MiniLM-L6-v2' are used to create embeddings for documents, which help in finding relevant text using similarity search.
+
+In retrieval-based QA, grounding answers in your own documents is important to reduce hallucination and improve accuracy in generated responses.
+
+Using local language models can help in creating offline retrieval-augmented generation systems without API costs, which is useful for assignments, learning, and small projects.
