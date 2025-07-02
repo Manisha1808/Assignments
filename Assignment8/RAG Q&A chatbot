@@ -1,0 +1,115 @@
+Retrieval-Augmented Generation (RAG) Chatbot – Documentation
+✅ Objective
+To build a RAG (Retrieval-Augmented Generation) chatbot that:
+
+Retrieves relevant information from provided documents.
+
+Generates answers using a local language model.
+
+Reduces hallucination by grounding answers in retrieved documents.
+
+✅ Environment Setup
+Python 3.11
+
+Virtual environment: rag_env
+
+Key libraries:
+
+langchain
+
+langchain-community
+
+langchain-huggingface
+
+sentence-transformers
+
+faiss-cpu
+
+transformers
+
+torch
+
+✅ Workflow
+1️⃣ Document Loading
+
+Load text documents from a local docs/ folder using DirectoryLoader.
+
+Split into manageable chunks using CharacterTextSplitter.
+
+2️⃣ Embedding Generation
+
+Use HuggingFaceEmbeddings (all-MiniLM-L6-v2) to convert document chunks into vector embeddings.
+
+3️⃣ Vector Store Creation (FAISS)
+
+Store embeddings in FAISS for fast similarity-based retrieval.
+
+4️⃣ Retriever Setup
+
+Use vectorstore.as_retriever() to fetch relevant chunks for a user query.
+
+5️⃣ Local LLM Integration
+
+Use HuggingFacePipeline with a local LLM (e.g., gpt2, flan-t5-base) to generate answers from retrieved context.
+
+6️⃣ QA Chain
+
+Connect retriever and LLM using RetrievalQA chain:
+
+Retrieves relevant context.
+
+Generates an answer grounded in context.
+
+7️⃣ User Interaction
+
+Accept user queries in a loop until "exit" is entered.
+
+Return generated answers for each query.
+
+✅ Key Features Demonstrated
+✅ Successfully loads and processes documents.
+✅ Retrieves relevant chunks for user queries.
+✅ Generates context-based answers.
+✅ Uses local models to avoid API costs, demonstrating an offline RAG pipeline.
+
+✅ Limitations
+Answers may be partial due to small local LLM constraints.
+
+Outputs may include additional context; filtering may be required for production systems.
+
+For advanced deployment, larger local LLMs or API-based models can improve answer quality.
+
+✅ How to Run
+bash
+Copy
+Edit
+# Activate virtual environment
+.\rag_env\Scripts\activate
+
+# Run the chatbot
+python rag_chatbot.py
+✅ Sample Interaction
+pgsql
+Copy
+Edit
+Ask a question (or type 'exit' to quit): What is RAG?
+> RAG (Retrieval-Augmented Generation) is a system that combines retrieval of documents and generation of responses for QA tasks.
+
+Ask a question (or type 'exit' to quit): exit
+✅ Conclusion
+This RAG chatbot assignment demonstrates the core principles of retrieval-augmented generation using LangChain, Hugging Face embeddings, FAISS, and local LLMs for offline, cost-free retrieval-based QA workflows, aligned with practical LLM grounding techniques.
+
+If you want, I can also prepare:
+✅ A clean rag_chatbot.py final code for submission.
+✅ A PowerPoint slide summarizing your assignment for viva/mentor check.
+✅ Or a GitHub README for structured submission.
+
+Let me know which you need next!
+
+
+
+
+
+
+
+
